@@ -7,13 +7,14 @@ from matplotlib.widgets import SpanSelector
 # =========================================================
 # CHANGE THESE SETTINGS
 # =========================================================
-FOLDER = Path(r"C:\Users\tjurk\Documents\DTU\Engineering Physics\GRADIVO\Thesis\Analysis\DATA\CoSAXS data MARCH\20260306 CoSAXS\process\Tina ONLINE AF4 SAXS\F3C_mRNA_TRIS_scan-84558_shotsE")
+FOLDER = Path(r"C:\Users\tjurk\Documents\DTU\Engineering Physics\GRADIVO\Thesis\Analysis\DATA\CoSAXS data MARCH\20260306 CoSAXS\process\Tina ONLINE AF4 SAXS\F3C_emtpy_TRIS_scan-84557_shotsE")
 
 # Allowed file extensions
 EXTENSIONS = [".dat", ".txt", ""]
 
 # Number of frames per exported sample curve
 WINDOW_SIZE = 50
+
 
 # Step between windows
 # 50 = non-overlapping blocks: 1-50, 51-100, ...
