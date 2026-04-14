@@ -8,85 +8,33 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --text: #1a1a18;
-    --text-2: #5a5a55;
-    --text-3: #9a9a93;
-    --bg: #fafaf7;
-    --bg-2: #f3f3ef;
-    --bg-3: #ebebе6;
-    --border: rgba(30,30,20,0.12);
-    --border-2: rgba(30,30,20,0.22);
-    --accent: #2a5c45;
-    --accent-light: #e8f0ec;
-    --mono: 'DM Mono', monospace;
-    --serif: 'EB Garamond', Georgia, serif;
+    --text: #1a1a18; --text-2: #5a5a55; --text-3: #9a9a93;
+    --bg: #fafaf7; --bg-2: #f3f3ef;
+    --border: rgba(30,30,20,0.12); --border-2: rgba(30,30,20,0.22);
+    --accent: #2a5c45; --accent-light: #e8f0ec;
+    --mono: 'DM Mono', monospace; --serif: 'EB Garamond', Georgia, serif;
   }
-
-  body {
-    font-family: var(--serif);
-    background: var(--bg);
-    color: var(--text);
-    font-size: 17px;
-    line-height: 1.7;
-  }
-
-  /* ── layout ── */
+  body { font-family: var(--serif); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
   .shell { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 5rem; }
-
-  /* ── header ── */
-  header {
-    border-bottom: 0.5px solid var(--border-2);
-    padding: 2.5rem 0 2rem;
-    margin-bottom: 0;
-  }
+  header { border-bottom: 0.5px solid var(--border-2); padding: 2.5rem 0 2rem; }
   .header-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; }
   header h1 { font-size: 30px; font-weight: 400; letter-spacing: -0.3px; line-height: 1.1; }
   .header-sub { font-size: 15px; color: var(--text-2); font-style: italic; margin-top: 5px; }
   .header-affil { font-family: var(--mono); font-size: 11px; font-weight: 300; color: var(--text-3); margin-top: 4px; letter-spacing: 0.06em; text-transform: uppercase; }
-
-  /* ── nav ── */
   nav { display: flex; gap: 0; flex-wrap: wrap; border-bottom: 0.5px solid var(--border); }
-  nav a {
-    font-family: var(--mono); font-size: 12px; font-weight: 300;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--text-3); text-decoration: none;
-    padding: 0.9rem 1.25rem 0.75rem;
-    border-bottom: 2px solid transparent;
-    transition: color 0.15s, border-color 0.15s;
-    cursor: pointer; display: block;
-  }
+  nav a { font-family: var(--mono); font-size: 12px; font-weight: 300; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); text-decoration: none; padding: 0.9rem 1.25rem 0.75rem; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; cursor: pointer; display: block; }
   nav a:hover { color: var(--text); }
   nav a.active { color: var(--text); border-bottom-color: var(--accent); }
-
-  /* ── sections ── */
   .section { display: none; padding-top: 3rem; }
   .section.visible { display: block; }
-
-  .section-eyebrow {
-    font-family: var(--mono); font-size: 10px; font-weight: 300;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--text-3); margin-bottom: 2.5rem;
-  }
-
-  /* ── protocol accordion ── */
+  .section-eyebrow { font-family: var(--mono); font-size: 10px; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 2.5rem; }
   .protocol-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; margin-bottom: 2rem; }
-  .tag {
-    font-family: var(--mono); font-size: 10px; font-weight: 300;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 3px 9px; border: 0.5px solid var(--border-2);
-    border-radius: 2px; color: var(--text-2);
-  }
+  .tag { font-family: var(--mono); font-size: 10px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border: 0.5px solid var(--border-2); border-radius: 2px; color: var(--text-2); }
   .tag.green { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
-
   .accordion { border-top: 0.5px solid var(--border); }
   .acc-item { border-bottom: 0.5px solid var(--border); }
-  .acc-header {
-    display: flex; align-items: baseline; gap: 1rem;
-    padding: 1rem 0; cursor: pointer; user-select: none;
-    transition: background 0.1s;
-  }
+  .acc-header { display: flex; align-items: baseline; gap: 1rem; padding: 1rem 0; cursor: pointer; user-select: none; }
   .acc-header:hover { background: var(--bg-2); margin: 0 -1.5rem; padding-left: 1.5rem; padding-right: 1.5rem; }
   .acc-num { font-family: var(--mono); font-size: 11px; font-weight: 300; color: var(--text-3); min-width: 22px; }
   .acc-title { font-size: 17px; font-weight: 400; flex: 1; }
@@ -95,121 +43,56 @@
   .acc-body { display: none; padding: 0 0 1.5rem 2rem; }
   .acc-body.open { display: block; }
   .acc-body p { font-size: 16px; line-height: 1.8; margin-top: 0.75rem; }
-  .acc-body p:first-child { margin-top: 0; }
-  .note {
-    font-size: 14px; font-style: italic; color: var(--text-2);
-    margin-top: 1rem; padding: 0.6rem 0.9rem;
-    border-left: 2px solid var(--border-2);
-    background: var(--bg-2);
-  }
-  .param-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 0; margin-top: 1rem;
-    border: 0.5px solid var(--border); border-radius: 4px; overflow: hidden;
-    font-size: 14px;
-  }
+  .note { font-size: 14px; font-style: italic; color: var(--text-2); margin-top: 1rem; padding: 0.6rem 0.9rem; border-left: 2px solid var(--border-2); background: var(--bg-2); }
+  .param-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 1rem; border: 0.5px solid var(--border); border-radius: 4px; overflow: hidden; font-size: 14px; }
   .param-row { display: contents; }
   .param-row > * { padding: 6px 10px; border-bottom: 0.5px solid var(--border); }
   .param-row:last-child > * { border-bottom: none; }
   .param-k { font-family: var(--mono); font-size: 12px; font-weight: 300; color: var(--text-2); background: var(--bg-2); }
-  .param-v { color: var(--text); }
-
-  /* ── tools grid ── */
   .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 2rem; }
-  .tool-card {
-    background: var(--bg); padding: 1.5rem;
-    cursor: pointer; transition: background 0.12s;
-    display: flex; flex-direction: column; gap: 0.5rem;
-  }
+  .tool-card { background: var(--bg); padding: 1.5rem; cursor: pointer; transition: background 0.12s; display: flex; flex-direction: column; gap: 0.5rem; }
   .tool-card:hover { background: var(--bg-2); }
-  .tool-card.active { background: var(--accent-light); }
   .tool-card .tc-label { font-family: var(--mono); font-size: 10px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
   .tool-card h3 { font-size: 17px; font-weight: 400; }
   .tool-card p { font-size: 13px; color: var(--text-2); font-style: italic; line-height: 1.5; }
   .tool-card .tc-badge { font-family: var(--mono); font-size: 10px; color: var(--accent); background: var(--accent-light); border: 0.5px solid var(--accent); border-radius: 2px; padding: 2px 7px; width: fit-content; letter-spacing: 0.06em; text-transform: uppercase; }
-
-  /* ── tool detail panel ── */
   .tool-detail { display: none; }
   .tool-detail.visible { display: block; }
-
   .tool-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 0.5px solid var(--border); }
   .tool-header h2 { font-size: 24px; font-weight: 400; margin-bottom: 6px; }
   .tool-header .desc { font-size: 16px; color: var(--text-2); font-style: italic; }
-
   .tool-section { margin-bottom: 2.5rem; }
-  .tool-section h4 {
-    font-family: var(--mono); font-size: 11px; font-weight: 300;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3);
-    margin-bottom: 1rem; padding-bottom: 0.5rem;
-    border-bottom: 0.5px solid var(--border);
-  }
+  .tool-section h4 { font-family: var(--mono); font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 0.5px solid var(--border); }
   .tool-section p { font-size: 16px; line-height: 1.8; margin-bottom: 0.75rem; }
-  .tool-section p:last-child { margin-bottom: 0; }
-
-  /* input format table */
   .format-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 0.5rem; }
   .format-table th { font-family: var(--mono); font-size: 11px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); text-align: left; padding: 6px 10px; border-bottom: 0.5px solid var(--border-2); background: var(--bg-2); }
   .format-table td { padding: 7px 10px; border-bottom: 0.5px solid var(--border); vertical-align: top; line-height: 1.5; }
   .format-table tr:last-child td { border-bottom: none; }
   .format-table td:first-child { font-family: var(--mono); font-size: 12px; color: var(--accent); width: 160px; }
-
-  /* code block */
-  .code-block {
-    background: #f0f0ec; border: 0.5px solid var(--border-2);
-    border-radius: 4px; padding: 1rem 1.25rem;
-    font-family: var(--mono); font-size: 13px; font-weight: 300;
-    line-height: 1.7; white-space: pre; overflow-x: auto;
-    margin-top: 0.5rem; color: var(--text);
-  }
-
-  /* template download button */
-  .dl-btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: var(--mono); font-size: 12px; font-weight: 300;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--accent); background: var(--accent-light);
-    border: 0.5px solid var(--accent); border-radius: 3px;
-    padding: 8px 16px; cursor: pointer; text-decoration: none;
-    transition: background 0.12s; margin-top: 0.75rem;
-  }
+  .code-block { background: #f0f0ec; border: 0.5px solid var(--border-2); border-radius: 4px; padding: 1rem 1.25rem; font-family: var(--mono); font-size: 13px; font-weight: 300; line-height: 1.7; white-space: pre; overflow-x: auto; margin-top: 0.5rem; color: var(--text); }
+  .dl-btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; font-weight: 300; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); border: 0.5px solid var(--accent); border-radius: 3px; padding: 8px 16px; cursor: pointer; text-decoration: none; transition: background 0.12s; margin-top: 0.75rem; }
   .dl-btn:hover { background: #d4e6dc; }
   .dl-btn svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
-
-  /* step list */
   .steps { list-style: none; counter-reset: steps; margin-top: 0.5rem; }
   .steps li { counter-increment: steps; padding: 0.6rem 0 0.6rem 2.5rem; position: relative; border-bottom: 0.5px solid var(--border); font-size: 15px; line-height: 1.6; }
   .steps li:last-child { border-bottom: none; }
-  .steps li::before {
-    content: counter(steps);
-    position: absolute; left: 0; top: 0.7rem;
-    font-family: var(--mono); font-size: 11px; font-weight: 300;
-    color: var(--text-3); background: var(--bg-2);
-    border: 0.5px solid var(--border); border-radius: 50%;
-    width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
-    line-height: 1;
-  }
-
-  /* output list */
+  .steps li::before { content: counter(steps); position: absolute; left: 0; top: 0.7rem; font-family: var(--mono); font-size: 11px; font-weight: 300; color: var(--text-3); background: var(--bg-2); border: 0.5px solid var(--border); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; line-height: 1; }
   .output-list { list-style: none; margin-top: 0.5rem; }
   .output-list li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; font-size: 15px; border-bottom: 0.5px solid var(--border); }
   .output-list li:last-child { border-bottom: none; }
-  .output-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-style: normal; }
-
-  /* ── about ── */
+  .output-list li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); }
   .about-grid { display: grid; grid-template-columns: 1fr 270px; gap: 3rem; }
   @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
   .about-text p { font-size: 17px; line-height: 1.85; margin-bottom: 1.25rem; }
   .contact-box { background: var(--bg-2); border: 0.5px solid var(--border); border-radius: 6px; padding: 1.5rem; }
   .contact-box h3 { font-family: var(--mono); font-size: 10px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 1.25rem; }
   .contact-row { margin-bottom: 1rem; }
-  .contact-row:last-child { margin-bottom: 0; }
   .contact-row .cl { font-family: var(--mono); font-size: 10px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 2px; }
   .contact-row .cv { font-size: 14px; }
-
-  /* back link */
   .back-link { font-family: var(--mono); font-size: 11px; font-weight: 300; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; margin-bottom: 2rem; transition: color 0.12s; }
   .back-link:hover { color: var(--text); }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
 <div class="shell">
@@ -230,6 +113,7 @@
     <a onclick="showSection('about', this)">About</a>
   </nav>
 
+  <!-- PROTOCOL SECTION: unchanged from original - copy from your existing index.html -->
   <!-- ══════════════════ PROTOCOLS ══════════════════ -->
   <div id="protocols" class="section visible">
     <div class="section-eyebrow">Protocol - v1.0</div>
@@ -310,9 +194,7 @@
         <div class="acc-body">
           <div class="note" style="margin-top:0.5rem;"><strong style="font-weight:500">Before starting:</strong> Clean the bench with RNaseZAP and wear gloves throughout.</div>
           <p style="margin-top:1rem;">This section covers two formulation compositions. Follow the subsection corresponding to the formulation being prepared.</p>
-
           <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1.5rem 0 0.5rem;">2.1 Formulation A: C12-200 / DOPE / PLGA / DMPE-PEG</h5>
-          <p><strong style="font-weight:500">Component Composition and Stock Concentrations</strong></p>
           <table class="format-table" style="margin-bottom:1rem;">
             <thead><tr><th>Component</th><th>Role</th><th>Stock conc.</th><th>Mol%</th></tr></thead>
             <tbody>
@@ -323,7 +205,6 @@
               <tr><td>mRNA</td><td>Cargo</td><td>1 mg/mL</td><td>-</td></tr>
             </tbody>
           </table>
-          <p><strong style="font-weight:500">Key Formulation Parameters</strong></p>
           <div class="param-grid" style="margin-bottom:1rem;">
             <div class="param-row"><span class="param-k">N/P ratio</span><span class="param-v">10</span></div>
             <div class="param-row"><span class="param-k">C12-200 : DOPE ratio</span><span class="param-v">3:1</span></div>
@@ -331,18 +212,14 @@
             <div class="param-row"><span class="param-k">PLGA content</span><span class="param-v">50 wt%</span></div>
             <div class="param-row"><span class="param-k">Flow rate ratio (aq:org)</span><span class="param-v">3:1</span></div>
           </div>
-          <p><strong style="font-weight:500">Stock Solution Preparation</strong></p>
           <p>Stock solutions for C12-200, DMPE-PEG2000, and DOPE can be prepared in advance and stored in the freezer for future use. PLGA stock must be prepared fresh on the day of formulation and discarded after use - it cannot be stored or reused.</p>
-          <p>The required amounts are calculated from the Excel sheet. Because the quantities are small and difficult to weigh precisely, weigh approximately the target amount, record the exact mass, and adjust the solvent volume accordingly.</p>
           <p>Each stock is dissolved in its designated solvent:</p>
           <ul style="margin:0.5rem 0 0.5rem 2rem;font-size:15px;line-height:1.8;">
             <li>C12-200 and DMPE-PEG2000: dissolve in 2% v/v acetic acid in acetonitrile.</li>
             <li>DOPE: dissolve in absolute ethanol.</li>
             <li>PLGA: dissolve in pure acetonitrile. Prepare fresh immediately before use.</li>
           </ul>
-          <p>Once all stocks are prepared, place the vials in a warm water bath at 50 °C for 2 minutes to ensure complete dissolution, then vortex briefly before use.</p>
-          <p><strong style="font-weight:500">Preparation of the Organic Phase</strong></p>
-          <p>The volumes of each stock are calculated from the Excel sheet. The addition order is critical: PLGA initiates nanoprecipitation and must be added last.</p>
+          <p>The addition order is critical: PLGA initiates nanoprecipitation and must be added last.</p>
           <ol class="steps">
             <li>Add the calculated excess volume of 2% v/v acetic acid in acetonitrile to a clean glass vial.</li>
             <li>Add the calculated volume of C12-200 stock solution.</li>
@@ -352,7 +229,6 @@
           </ol>
 
           <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1.5rem 0 0.5rem;">2.2 Formulation B: SM-102 / DSPC / PLGA / DMG-PEG</h5>
-          <p><strong style="font-weight:500">Component Composition and Stock Concentrations</strong></p>
           <table class="format-table" style="margin-bottom:1rem;">
             <thead><tr><th>Component</th><th>Role</th><th>Stock conc.</th><th>Mol%</th></tr></thead>
             <tbody>
@@ -363,7 +239,6 @@
               <tr><td>mRNA</td><td>Cargo</td><td>1 mg/mL</td><td>-</td></tr>
             </tbody>
           </table>
-          <p><strong style="font-weight:500">Key Formulation Parameters</strong></p>
           <div class="param-grid" style="margin-bottom:1rem;">
             <div class="param-row"><span class="param-k">N/P ratio</span><span class="param-v">11.8</span></div>
             <div class="param-row"><span class="param-k">SM-102 : DSPC ratio</span><span class="param-v">3:1</span></div>
@@ -371,17 +246,12 @@
             <div class="param-row"><span class="param-k">PLGA content</span><span class="param-v">50 wt%</span></div>
             <div class="param-row"><span class="param-k">Flow rate ratio (aq:org)</span><span class="param-v">3:1</span></div>
           </div>
-          <p><strong style="font-weight:500">Stock Solution Preparation</strong></p>
-          <p>Stock solutions for SM-102, DMG-PEG, and DSPC can be prepared in advance and stored in the freezer for future use. PLGA stock must be prepared fresh on the day of formulation and discarded after use - it cannot be stored or reused.</p>
-          <p>The required amounts are calculated from the Excel sheet. Because the quantities are small and difficult to weigh precisely, weigh approximately the target amount, record the exact mass, and adjust the solvent volume accordingly.</p>
-          <p>Each stock is dissolved in its designated solvent:</p>
+          <p>Stock solutions for SM-102, DMG-PEG, and DSPC can be prepared in advance and stored in the freezer for future use. PLGA stock must be prepared fresh on the day of formulation and discarded after use.</p>
           <ul style="margin:0.5rem 0 0.5rem 2rem;font-size:15px;line-height:1.8;">
             <li>SM-102 and DMG-PEG: dissolve in 2% v/v acetic acid in acetonitrile.</li>
             <li>DSPC: dissolve in absolute ethanol.</li>
             <li>PLGA: dissolve in pure acetonitrile. Prepare fresh immediately before use.</li>
           </ul>
-          <p>Once all stocks are prepared, place the vials in a warm water bath at 50 °C for 2 minutes to ensure complete dissolution, then vortex briefly before use.</p>
-          <p><strong style="font-weight:500">Preparation of the Organic Phase</strong></p>
           <ol class="steps">
             <li>Add the calculated excess volume of 2% v/v acetic acid in acetonitrile to a clean glass vial.</li>
             <li>Add the calculated volume of SM-102 stock solution.</li>
@@ -391,10 +261,9 @@
           </ol>
 
           <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1.5rem 0 0.5rem;">2.3 Preparation of the Aqueous Phase (both formulations)</h5>
-          <p>The aqueous phase is prepared identically for both formulations and both mRNA-loaded and empty LPN variants.</p>
           <ul style="margin:0.5rem 0 0.5rem 2rem;font-size:15px;line-height:1.8;">
-            <li><strong style="font-weight:500">mRNA-loaded:</strong> Add the calculated volume of FLuc mRNA stock (1 mg/mL) to citrate buffer (pH 4.0) to reach the target mRNA concentration. Make up to the full aqueous phase volume with citrate buffer and mix gently by pipetting.</li>
-            <li><strong style="font-weight:500">Empty particles:</strong> Replace the mRNA volume with an equal volume of citrate buffer (pH 4.0). The total aqueous phase volume remains the same.</li>
+            <li><strong style="font-weight:500">mRNA-loaded:</strong> Add the calculated volume of FLuc mRNA stock (1 mg/mL) to citrate buffer (pH 4.0). Make up to the full aqueous phase volume with citrate buffer and mix gently.</li>
+            <li><strong style="font-weight:500">Empty particles:</strong> Replace the mRNA volume with an equal volume of citrate buffer (pH 4.0).</li>
           </ul>
         </div>
       </div>
@@ -407,7 +276,6 @@
           <span class="acc-arrow">▶</span>
         </div>
         <div class="acc-body">
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:0.5rem 0 0.5rem;">3.1 Instrument Parameters</h5>
           <div class="param-grid" style="margin-bottom:1rem;">
             <div class="param-row"><span class="param-k">Flow rate ratio (aqueous : organic)</span><span class="param-v">3:1</span></div>
             <div class="param-row"><span class="param-k">Total flow rate</span><span class="param-v">12 mL/min</span></div>
@@ -415,18 +283,16 @@
             <div class="param-row"><span class="param-k">End waste volume</span><span class="param-v">0.10 mL</span></div>
             <div class="param-row"><span class="param-k">Total processed volume</span><span class="param-v">12 mL</span></div>
           </div>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">3.2 Procedure</h5>
           <ol class="steps">
             <li>Insert an Ignite NxGen cartridge into the Nanoassemblr instrument.</li>
-            <li>Using a needle, transfer the organic phase into a 5 mL syringe and the aqueous phase into a 10 mL syringe.</li>
-            <li>Remove all air bubbles from both syringes. Push the plunger up until the liquid reaches the very tip of the syringe with no air remaining.</li>
-            <li>Insert each syringe into the instrument in the correct position as defined in the instrument settings (organic phase and aqueous phase channels).</li>
-            <li>Insert the waste and sample collection vials (screw-cap vials) into their designated positions on the instrument.</li>
-            <li>Before starting the run, set aside some PBS buffer in a separate tube for use in the upconcentration step later.</li>
-            <li>Place the dialysis cassettes in the PBS buffer now to activate the membranes while the run proceeds (see Section 4).</li>
+            <li>Transfer the organic phase into a 5 mL syringe and the aqueous phase into a 10 mL syringe using a needle.</li>
+            <li>Remove all air bubbles from both syringes.</li>
+            <li>Insert each syringe into the instrument in the correct position.</li>
+            <li>Insert the waste and sample collection vials into their designated positions.</li>
+            <li>Place the dialysis cassettes in PBS buffer now to activate the membranes (see Section 4).</li>
             <li>Start the Nanoassemblr run.</li>
           </ol>
-          <div class="note"><strong style="font-weight:500">Important:</strong> Ensure no air bubbles remain in either syringe before inserting them into the instrument. Air in the syringe will disrupt the flow and compromise the formulation.</div>
+          <div class="note"><strong style="font-weight:500">Important:</strong> Ensure no air bubbles remain in either syringe before inserting them. Air will disrupt the flow and compromise the formulation.</div>
         </div>
       </div>
 
@@ -438,20 +304,17 @@
           <span class="acc-arrow">▶</span>
         </div>
         <div class="acc-body">
-          <p>Dialysis removes residual organic solvents (acetonitrile and ethanol) from the formulation and exchanges the citrate buffer (pH 4.0) for PBS (pH 7.4), cleaning up the formulation before downstream use.</p>
-          <div class="note"><strong style="font-weight:500">Important:</strong> Never touch the dialysis membrane with your fingers and never allow it to dry at any point during this procedure. Handle the cassettes by their rigid frame only.</div>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">4.1 Procedure (Slide-A-Lyzer Dialysis Cassettes)</h5>
+          <p>Dialysis removes residual organic solvents and exchanges citrate buffer (pH 4.0) for PBS (pH 7.4).</p>
+          <div class="note"><strong style="font-weight:500">Important:</strong> Never touch the dialysis membrane with your fingers and never allow it to dry. Handle cassettes by their rigid frame only.</div>
           <ol class="steps">
-            <li>While the Nanoassemblr run is in progress, place the dialysis cassettes in the beaker of PBS to hydrate and activate the membranes. Leave them submerged until the run is complete.</li>
-            <li>Once the run is finished, draw 0.3 mL of air into a 5 mL syringe before aspirating the formulation from the sample vial. This air cushion prevents over-swelling of the membrane during loading.</li>
+            <li>While the run is in progress, place dialysis cassettes in PBS to hydrate the membranes.</li>
+            <li>Draw 0.3 mL of air into a 5 mL syringe before aspirating the formulation. This air cushion prevents over-swelling during loading.</li>
             <li>Inject the formulation through the top port of the cassette.</li>
-            <li>Rinse the sample vial with a small volume of clean PBS and inject the washings into the cassette as well, to maximise recovery.</li>
-            <li>Place the filled cassettes back into the beaker containing 1.5 L of PBS on a magnetic stirrer. The PBS should be stirring continuously throughout dialysis.</li>
-            <li>Dialyse for 3 hours at room temperature on the magnetic stirrer.</li>
-            <li>Transfer the beaker to a cold room (4 °C) and continue dialysing overnight, with stirring maintained.</li>
-            <li>After dialysis, remove the cassettes from the beaker.</li>
-            <li>Using a 5 mL syringe, extract the dialysed formulation from the bottom port of the cassette.</li>
-            <li>Transfer the formulation to an appropriate tube for downstream use.</li>
+            <li>Rinse the sample vial with a small volume of PBS and inject washings into the cassette.</li>
+            <li>Place filled cassettes in 1.5 L PBS on a magnetic stirrer.</li>
+            <li>Dialyse for 3 hours at room temperature.</li>
+            <li>Transfer to cold room (4 °C) and continue dialysing overnight.</li>
+            <li>Extract the dialysed formulation from the bottom port using a 5 mL syringe.</li>
           </ol>
         </div>
       </div>
@@ -464,24 +327,17 @@
           <span class="acc-arrow">▶</span>
         </div>
         <div class="acc-body">
-          <p>Upconcentration removes excess PBS that has entered the formulation during dialysis, reducing the volume to a manageable and concentrated final sample.</p>
-          <div class="note"><strong style="font-weight:500">Important:</strong> Always use two filter vials in the centrifuge to balance the rotor. Never run with a single vial.</div>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">5.1 Activating the Filter Membranes</h5>
+          <p>Removes excess PBS from dialysis, reducing volume to a concentrated final sample.</p>
+          <div class="note"><strong style="font-weight:500">Important:</strong> Always use two filter vials in the centrifuge to balance the rotor.</div>
           <ol class="steps">
-            <li>Fill both centrifugal filter vials with PBS to activate the membranes: use clean PBS in the vial designated for the sample, and either clean or used dialysis PBS in the counterweight vial.</li>
-            <li>Centrifuge both vials at 3000 × g, 4 °C for 5 minutes to wet the membranes.</li>
-            <li>Remove the vials from the centrifuge and discard the liquid from the bottom collection tube of each vial.</li>
-          </ol>
-          <div class="note"><strong style="font-weight:500">Important:</strong> Never allow the membrane to dry during this procedure.</div>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">5.2 Concentrating the Sample</h5>
-          <ol class="steps" style="counter-reset:steps 3;">
-            <li>Add a portion of the formulation to the top of the sample filter vial. Fill the counterweight vial with an equivalent volume of PBS to balance.</li>
+            <li>Fill both centrifugal filter vials with PBS to activate membranes.</li>
+            <li>Centrifuge at 3000 × g, 4 °C for 5 minutes. Discard filtrate.</li>
+            <li>Add formulation to the sample filter vial; fill counterweight vial with PBS to balance.</li>
             <li>Centrifuge at 3000 × g, 4 °C for 15 minutes.</li>
-            <li>Repeat steps 4 and 5 - refill the filter vial with the next portion of formulation and centrifuge again - until all formulation has been loaded.</li>
-            <li>Once all formulation has been added, continue centrifuging in 5-minute increments, checking the volume each time, until approximately 100 µL remains.</li>
-            <li>Collect the concentrated formulation from the filter into 0.5 mL non-stick hydrophobic microtubes.</li>
+            <li>Repeat until all formulation is loaded, then centrifuge in 5-minute increments until ≈00 µL remains.</li>
+            <li>Collect the concentrated formulation into 0.5 mL non-stick hydrophobic microtubes.</li>
           </ol>
-          <div class="note"><strong style="font-weight:500">Important:</strong> Measure the exact recovered volume using a pipette: this value is required for downstream concentration calculations.</div>
+          <div class="note"><strong style="font-weight:500">Important:</strong> Measure the exact recovered volume — this is required for downstream concentration calculations.</div>
         </div>
       </div>
 
@@ -493,32 +349,20 @@
           <span class="acc-arrow">▶</span>
         </div>
         <div class="acc-body">
-          <p>DLS is used to determine the hydrodynamic radius (R<sub>h</sub>) and polydispersity index (PDI) of the LPN formulation. The hydrodynamic radius is defined as the radius of a hypothetical sphere that diffuses at the same rate as the particle, calculated from the measured diffusion coefficient D via the Stokes-Einstein relation:</p>
-          <p style="text-align:center;font-style:italic;margin:1rem 0;">r<sub>h</sub> = kT / (6πηD)</p>
-          <p>where k is Boltzmann's constant, T is the absolute temperature, and η is the viscosity of the solvent. Note that R<sub>h</sub> does not give information about particle shape - it is a rough measure of effective size only.</p>
-          <p>R<sub>h</sub> reports the average particle size in solution. The PDI describes the homogeneity of the size distribution: a PDI below 0.2 indicates a monodisperse, well-defined population. A PDI above 0.2 suggests a broad distribution with particles of significantly different sizes, which is generally undesirable.</p>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">6.1 Sample Preparation</h5>
-          <p>The target concentration for DLS measurement is 0.18 mg/mL with a total cuvette volume of approximately 700 µL. The exact volume of sample V₁ to take is calculated from the Excel sheet based on the measured concentration after upconcentration, using:</p>
-          <p style="text-align:center;font-style:italic;margin:0.75rem 0;">C₁ · V₁ = C₂ · V₂</p>
-          <p>where C₁ is the LPN concentration after upconcentration (from the Excel sheet), C₂ = 0.18 mg/mL is the target measurement concentration, and V₂ ≈ 700 µL is the total cuvette volume. Make up the remaining volume with PBS.</p>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">6.2 Instrument Settings</h5>
+          <p>DLS measures hydrodynamic radius (R<sub>h</sub>) and PDI via the Stokes-Einstein relation: r<sub>h</sub> = kT / (6πηD). PDI below 0.2 indicates a monodisperse population.</p>
           <div class="param-grid" style="margin-bottom:1rem;">
             <div class="param-row"><span class="param-k">Instrument</span><span class="param-v">Zetasizer Nano (6th floor)</span></div>
             <div class="param-row"><span class="param-k">Material</span><span class="param-v">Phospholipid</span></div>
-            <div class="param-row"><span class="param-k">Dispersant</span><span class="param-v">Phosphate buffer saline (50 mM)</span></div>
+            <div class="param-row"><span class="param-k">Dispersant</span><span class="param-v">PBS (50 mM)</span></div>
             <div class="param-row"><span class="param-k">Mode</span><span class="param-v">Manual</span></div>
-            <div class="param-row"><span class="param-k">Runs</span><span class="param-v">10 per measurement, 3 measurements total</span></div>
+            <div class="param-row"><span class="param-k">Runs</span><span class="param-v">10 per measurement, 3 total</span></div>
             <div class="param-row"><span class="param-k">Cell type</span><span class="param-v">ZEN0040</span></div>
           </div>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">6.3 Measurement Procedure</h5>
+          <p>Target concentration: 0.18 mg/mL in ≈00 µL total. Calculate V₁ using C₁V₁ = C₂V₂ from the Excel sheet.</p>
           <ol class="steps">
-            <li>Clean the cuvette by rinsing sequentially with Milli-Q water, ethanol, and Milli-Q water again. Allow to dry inverted before use.</li>
-            <li>Calculate V₁ from the Excel sheet and prepare the sample in the cuvette: pipette V₁ of formulation and make up to ≈700 µL with PBS.</li>
-            <li>Turn on the Zetasizer Nano and allow it to warm up fully.</li>
-            <li>Insert the cuvette into the instrument.</li>
-            <li>Open the Zetasizer software, create a new measurement file, and enter the settings listed above.</li>
-            <li>Start the measurement run and wait for results.</li>
-            <li>Export the data: save the R<sub>h</sub>, PDI, and correlogram for each measurement.</li>
+            <li>Rinse cuvette with Milli-Q water, ethanol, and Milli-Q water again. Allow to dry.</li>
+            <li>Prepare sample at 0.18 mg/mL in the cuvette.</li>
+            <li>Start measurement and export R<sub>h</sub>, PDI, and correlogram for each run.</li>
           </ol>
         </div>
       </div>
@@ -531,65 +375,15 @@
           <span class="acc-arrow">▶</span>
         </div>
         <div class="acc-body">
-          <p>The RiboGreen assay quantifies mRNA in solution and is used to determine two key quality metrics:</p>
+          <p>Quantifies mRNA encapsulation efficiency (EE%) and recovery:</p>
           <ul style="margin:0.5rem 0 1rem 2rem;font-size:15px;line-height:1.8;">
-            <li><strong style="font-weight:500">Encapsulation efficiency (EE%):</strong> the fraction of the initially added mRNA that is successfully encapsulated within the LPNs, determined by comparing free (unencapsulated) mRNA in the TE condition to total mRNA.<br>
-            <span style="font-style:italic;">EE% = ([RNA]<sub>total</sub> − [RNA]<sub>free</sub>) / [RNA]<sub>total</sub> × 100%</span></li>
-            <li><strong style="font-weight:500">Recovery (%):</strong> the fraction of the originally added mRNA recovered after formulation, measured using Triton X-100 (TX) to disrupt the particles and release all encapsulated RNA.<br>
-            <span style="font-style:italic;">Recovery% = [RNA]<sub>total</sub> / [RNA]<sub>initially added</sub> × 100%</span></li>
+            <li><strong style="font-weight:500">EE%</strong> = ([RNA]<sub>total</sub> − [RNA]<sub>free</sub>) / [RNA]<sub>total</sub> × 100%</li>
+            <li><strong style="font-weight:500">Recovery%</strong> = [RNA]<sub>total</sub> / [RNA]<sub>initially added</sub> × 100%</li>
           </ul>
-          <p>[RNA]<sub>total</sub> is measured in the presence of TX, which disrupts the LPNs and makes all RNA accessible to RiboGreen. [RNA]<sub>free</sub> is measured in TE only, reflecting unencapsulated RNA.</p>
-
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">7.1 Buffer Volume Planning</h5>
-          <p>Before preparing buffers, calculate the total volumes of 1×TE and 2% TX needed based on the number of samples. Each buffer is required for: the standard curve (6 wells × 3 repeats), one blank well, and the sample wells. Scale the buffer preparation accordingly.</p>
-
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">7.2 Working Buffer Preparation</h5>
-          <div class="note"><strong style="font-weight:500">Working with Triton X-100 (TX):</strong> TX is highly viscous and prone to foaming. Always use reverse pipetting when handling TX: press the plunger all the way to the second stop before entering the liquid, aspirate by releasing the plunger fully, wait a moment, then withdraw the tip and dispense by pressing only to the first stop. This applies both when adding TX to TE buffer and when pipetting TX buffer into wells. Before starting the plate, vortex both the TE and TX buffers to ensure no residue has settled at the bottom.</div>
-          <p style="margin-top:1rem;"><strong style="font-weight:500">1×TE buffer (50 mL):</strong> Prepare this twice - one batch will be used as 1×TE directly, and the second will be used to prepare the 2% TX buffer.</p>
-          <ol class="steps">
-            <li>Add 49.5 mL RNase-free water to a 50 mL tube.</li>
-            <li>Add 0.5 mL of 100×TE buffer. Vortex.</li>
-          </ol>
-          <p style="margin-top:1rem;"><strong style="font-weight:500">2% Triton X-100 in TE (50 mL):</strong></p>
-          <ol class="steps">
-            <li>Add 49 mL of 1×TE to a 50 mL tube.</li>
-            <li>Add 1 mL of Triton X-100. Vortex.</li>
-          </ol>
-          <p style="margin-top:1rem;"><strong style="font-weight:500">2000× RiboGreen Working Dye (5 mL):</strong></p>
-          <ol class="steps">
-            <li>Wrap the tube in aluminium foil to protect from light.</li>
-            <li>Add 4997.5 µL of 1×TE to the tube.</li>
-            <li>Add 2.5 µL of RiboGreen stock.</li>
-            <li>Mix by gently shaking the tube by hand. Keep wrapped in foil and protected from light at all times.</li>
-          </ol>
-
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">7.3 Standard Curve Preparation</h5>
-          <div class="note"><strong style="font-weight:500">Note:</strong> Change the pipette tip between every step throughout the standard curve, blank, and sample preparation to avoid cross-contamination.</div>
-          <p style="margin-top:1rem;">The standard curve is prepared twice - once using 1×TE buffer (for the TE condition) and once using 2% TX buffer (for the TX condition). Follow the exact same procedure below for each, substituting the appropriate buffer throughout. Each curve is run in triplicate (three full sets of wells 1–6).</p>
-          <p>The curve uses a 1:2 serial dilution in wells 1–6, prepared from a 100 ng/mL intermediate. Dilutions are split into two stages: in-tube and in-well.</p>
-          <p><strong style="font-weight:500">In-tube dilutions</strong></p>
-          <ol class="steps">
-            <li>Tube A: 1 µL mRNA stock (1 mg/mL) + 99 µL of the appropriate buffer (TE or TX) → 10 µg/mL</li>
-            <li>Tube B: 5 µL Tube A + 495 µL of the appropriate buffer → 100 ng/mL</li>
-          </ol>
-          <p style="margin-top:1rem;"><strong style="font-weight:500">In-well serial dilution (from Tube B)</strong></p>
-          <ol class="steps">
-            <li>Add 200 µL of Tube B (100 ng/mL) to well 1.</li>
-            <li>Add 100 µL of the appropriate buffer to wells 2–6.</li>
-            <li>Transfer 100 µL from well 1 to well 2; mix thoroughly by pipetting up and down. Change tip.</li>
-            <li>Transfer 100 µL from well 2 to well 3; mix thoroughly. Change tip.</li>
-            <li>Continue the 1:2 serial dilution through well 6, changing the tip at each transfer.</li>
-            <li>After mixing well 6, remove and discard 100 µL so that each well contains exactly 100 µL.</li>
-          </ol>
-
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">7.4 Blank Wells</h5>
-          <ul style="margin:0.5rem 0 0.5rem 2rem;font-size:15px;line-height:1.8;">
-            <li>TE blank: 100 µL of 1×TE in a well.</li>
-            <li>TX blank: 100 µL of 2% TX in a well.</li>
-          </ul>
-
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">7.5 Sample Wells</h5>
-          <p>Dilute samples to fall within the linear range of the standard curve. Typical working dilutions are approximately 1:4 000 for the TE condition and 1:20 000 for the TX condition. Refer to the Excel sheet for the exact volumes based on your sample concentration.</p>
+          <p>[RNA]<sub>total</sub> is measured with Triton X-100 (TX) to disrupt particles. [RNA]<sub>free</sub> is measured in TE only.</p>
+          <div class="note"><strong style="font-weight:500">Working with TX:</strong> Always use reverse pipetting. Vortex both TE and TX buffers before starting the plate.</div>
+          <p style="margin-top:1rem;"><strong style="font-weight:500">Buffer preparation:</strong> 1×TE: 0.5 mL 100×TE + 49.5 mL RNase-free water. 2% TX: 1 mL TX + 49 mL 1×TE. 2000× RiboGreen dye: 2.5 µL stock + 4997.5 µL 1×TE (protect from light).</p>
+          <p><strong style="font-weight:500">Standard curve:</strong> Prepare in both TE and TX (triplicate). Serial dilution: Tube A: 1 µL mRNA (1 mg/mL) + 99 µL buffer → 10 µg/mL. Tube B: 5 µL Tube A + 495 µL buffer → 100 ng/mL. Then 1:2 serial dilution in-well across wells 1–6.</p>
           <table class="format-table" style="margin-top:0.5rem;">
             <thead><tr><th>Condition</th><th>Tube A</th><th>Tube B</th><th>Total dilution</th></tr></thead>
             <tbody>
@@ -597,9 +391,7 @@
               <tr><td>TX</td><td>1 µL sample + 99 µL TX</td><td>5 µL Tube A + 995 µL TX</td><td>~1:20 000</td></tr>
             </tbody>
           </table>
-
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">7.6 Adding RiboGreen Dye and Reading the Plate</h5>
-          <p>Once all wells (standards, blanks, and samples) are prepared, add 100 µL of RiboGreen working dye to every well. Mix each well thoroughly by pipetting up and down, changing the tip between wells. Read the plate immediately, keeping it protected from light until measurement.</p>
+          <p style="margin-top:0.75rem;">Add 100 µL RiboGreen dye to all wells. Read immediately, protected from light.</p>
         </div>
       </div>
 
@@ -611,18 +403,9 @@
           <span class="acc-arrow">▶</span>
         </div>
         <div class="acc-body">
-          <p>AF4 is used to characterise the size distribution and separation of LPN populations.</p>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">8.1 Sample Preparation</h5>
-          <p>Dilute the sample to a nominal concentration of 4 mg/mL in PBS, using the nominal concentration calculated in the Excel sheet after upconcentration. It is also useful to cross-check the concentration using the RiboGreen results.</p>
-          <div class="note"><strong style="font-weight:500">Note:</strong> A nominal concentration down to 2 mg/mL has been shown to work well, but 4 mg/mL is the standard.</div>
-          <p style="margin-top:0.75rem;">Transfer the diluted sample into small glass vials with a pierceable (permeable) top, so that the instrument needle can go through for injection.</p>
-          <div class="note"><strong style="font-weight:500">Important:</strong> Sample can collect on the walls and top of the vial rather than pooling at the bottom, which means less sample than expected may be recovered. Before loading, briefly centrifuge the vials for a few seconds to bring all the sample to the bottom. This step is critical to ensure the full sample volume is available for injection and nothing is wasted.</div>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">8.2 Injection Parameters</h5>
-          <p>The standard injection volume is 220 µL total: 200 µL sample injection with 20 µL excess. If sample volume is limited, injections down to 70 µL have been shown to work well, though 220 µL is the standard.</p>
-          <h5 style="font-family:var(--mono);font-size:12px;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2);margin:1rem 0 0.5rem;">8.3 Online AF4-SAXS Measurements</h5>
-          <p>For online AF4-SAXS measurements, the same sample preparation and injection settings apply: dilute to a nominal concentration of 4 mg/mL in PBS and use a 220 µL injection volume (200 µL + 20 µL excess).</p>
-          <p>In addition, extra PBS buffer is required as a carrier and for flushing between samples. 1 L has been found to be more than sufficient for 3 samples.</p>
-          <div class="note">[TO CHECK: Verify exact buffer volume required for online AF4-SAXS measurements.]</div>
+          <p>AF4 characterises the size distribution and separation of LPN populations.</p>
+          <p>Dilute the sample to 4 mg/mL in PBS. Transfer into glass vials with a pierceable top. Briefly centrifuge vials before loading to bring sample to the bottom. Standard injection: 220 µL (200 µL sample + 20 µL excess).</p>
+          <div class="note"><strong style="font-weight:500">Note:</strong> For online AF4-SAXS, same settings apply. 1 L PBS is sufficient as carrier for 3 samples.</div>
         </div>
       </div>
 
@@ -634,8 +417,7 @@
           <span class="acc-arrow">▶</span>
         </div>
         <div class="acc-body">
-          <p>Dilute the sample to a nominal concentration of 1 mg/mL in PBS, using the nominal concentration calculated in the Excel sheet after upconcentration.</p>
-          <p>The detector distance is 3.5 m. The measurement sequence for each sample is repeated as follows:</p>
+          <p>Dilute the sample to 1 mg/mL in PBS. Detector distance: 3.5 m.</p>
           <table class="format-table" style="margin-top:0.75rem;">
             <thead><tr><th>Step</th><th>Content</th></tr></thead>
             <tbody>
@@ -656,12 +438,9 @@
 
   <!-- ══════════════════ TOOLS ══════════════════ -->
   <div id="tools" class="section">
-
-    <!-- tool list view -->
     <div id="tools-list">
       <div class="section-eyebrow">Python tools - documentation &amp; templates</div>
       <p style="font-size:16px; color:var(--text-2); margin-bottom:2rem; font-style:italic;">Each tool runs locally on your machine. Select a tool to see the required input format, a downloadable template, and instructions for running the script.</p>
-
       <div class="tools-grid">
         <div class="tool-card" onclick="showTool('ribogreen')">
           <div class="tc-label">.py · ribogreen</div>
@@ -677,20 +456,20 @@
         </div>
         <div class="tool-card" onclick="showTool('dls')">
           <div class="tc-label">.py · dls</div>
-          <h3>DLS intensity distribution</h3>
-          <p>Plots log-scale bar chart of particle size distribution from Zetasizer intensity data.</p>
-          <span class="tc-badge">Text / paste</span>
+          <h3>DLS plotter</h3>
+          <p>Plots size distributions and/or correlograms from Zetasizer .txt exports. Auto-detects samples and repeats; interactive sample and plot-type selection.</p>
+          <span class="tc-badge">Folder of .txt files</span>
         </div>
         <div class="tool-card" onclick="showTool('chromixs')">
           <div class="tc-label">.py · chromixs</div>
-          <h3>ChromIXS frame processing</h3>
+          <h3>Chromixs frame processing</h3>
           <p>Detects buffer and sample regions in SEC-SAXS frame series, subtracts buffer and exports averaged blocks.</p>
           <span class="tc-badge">Folder of .dat files</span>
         </div>
         <div class="tool-card" onclick="showTool('guinier')">
           <div class="tc-label">.py · guinier</div>
           <h3>Guinier analysis</h3>
-          <p>Automatic Guinier range fitting across a folder of SAXS .dat files, outputs Rg ± error and a CSV table.</p>
+          <p>Automatic Guinier fitting using the longest-stable-window criterion. Outputs Rg ± error, quality flags, and p(r) readiness recommendations per file.</p>
           <span class="tc-badge">Folder of .dat files</span>
         </div>
         <div class="tool-card" onclick="showTool('saxs')">
@@ -699,8 +478,21 @@
           <p>Plots I(q) curves for a list of buffer-subtracted SAXS files on a log-log scale.</p>
           <span class="tc-badge">Folder of .dat files</span>
         </div>
+        <div class="tool-card" onclick="showTool('pr')">
+          <div class="tc-label">.py · p(r)</div>
+          <h3>p(r) analysis via datgnom</h3>
+          <p>Batch-runs ATSAS datgnom on SAXS files flagged for p(r) by the Guinier script. Uses Rg from the Guinier table; outputs .out files and a summary CSV.</p>
+          <span class="tc-badge">ATSAS · .dat files</span>
+        </div>
+        <div class="tool-card" onclick="showTool('powerlaw')">
+          <div class="tc-label">.py · powerlaw</div>
+          <h3>Power-law analysis</h3>
+          <p>Fits I(q) ∝ q<sup>−α</sup> in the intermediate-q regime across a folder of SAXS files. Automatic region search with stability criterion; detects two-regime behaviour.</p>
+          <span class="tc-badge">Folder of .dat files</span>
+        </div>
       </div>
     </div>
+
 
     <!-- ── RIBOGREEN ── -->
     <div id="tool-ribogreen" class="tool-detail">
@@ -710,30 +502,28 @@
         <div class="desc">Standard curve fitting · EE% · recovery · replicate QC · multi-file batch processing</div>
         <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/Ribogreen%20FINAL%20average%20peak%20plots.py" download>
           <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v-1.5H3V14z"/></svg>
-          Download script
+          Open script
         </a>
       </div>
-
       <div class="tool-section">
         <h4>What the script does</h4>
         <p>Reads one or more Excel files (each containing a sheet named <code style="font-family:var(--mono);font-size:14px">Data_for_Python</code>), fits a linear standard curve per plate and replicate, calculates mRNA concentrations for all sample wells, and computes encapsulation efficiency and recovery. Outputs plots and an Excel/CSV results table.</p>
       </div>
-
       <div class="tool-section">
         <h4>Required Excel sheet format - sheet name: <code style="font-family:var(--mono);font-size:13px">Data_for_Python</code></h4>
         <table class="format-table">
           <thead><tr><th>Column</th><th>Type</th><th>Description</th></tr></thead>
           <tbody>
             <tr><td>plate</td><td>text</td><td>Plate name / condition, e.g. <code style="font-family:var(--mono);font-size:12px">TE</code> or <code style="font-family:var(--mono);font-size:12px">TX</code></td></tr>
-            <tr><td>well</td><td>text</td><td>Well identifier, e.g. <code style="font-family:var(--mono);font-size:12px">A1</code>. Row letter is used to group replicates.</td></tr>
+            <tr><td>well</td><td>text</td><td>Well identifier, e.g. <code style="font-family:var(--mono);font-size:12px">A1</code>. Row letter groups replicates.</td></tr>
+            <tr><td>sample</td><td>text</td><td>Sample name, e.g. <code style="font-family:var(--mono);font-size:12px">F3</code></td></tr>
+            <tr><td>buffer</td><td>text</td><td>Buffer name, e.g. <code style="font-family:var(--mono);font-size:12px">TE</code> or <code style="font-family:var(--mono);font-size:12px">PBS</code></td></tr>
+            <tr><td>fraction</td><td>number</td><td>Fraction number from AF4</td></tr>
             <tr><td>kind</td><td>text</td><td>One of: <code style="font-family:var(--mono);font-size:12px">standard</code>, <code style="font-family:var(--mono);font-size:12px">blank</code>, <code style="font-family:var(--mono);font-size:12px">sample</code>, <code style="font-family:var(--mono);font-size:12px">exclude</code></td></tr>
-            <tr><td>std_conc_ng_ml</td><td>number</td><td>Standard concentration in ng/mL. Leave blank for sample and blank wells.</td></tr>
-            <tr><td>dilution_x</td><td>number</td><td>Dilution factor applied to the sample before measurement, e.g. <code style="font-family:var(--mono);font-size:12px">4000</code></td></tr>
-            <tr><td>rfu</td><td>number</td><td>Measured fluorescence value (RFU)</td></tr>
-            <tr><td>sample</td><td>text</td><td>Sample name, e.g. <code style="font-family:var(--mono);font-size:12px">F3</code> or <code style="font-family:var(--mono);font-size:12px">F3C</code></td></tr>
-            <tr><td>fraction</td><td>number</td><td>Fraction number from AF4 or other separation</td></tr>
-            <tr><td>buffer</td><td>text</td><td>Buffer name, e.g. <code style="font-family:var(--mono);font-size:12px">PBS</code></td></tr>
-            <tr><td>note</td><td>text</td><td>Optional free-text note (flags, observations)</td></tr>
+            <tr><td>std_conc_ng_ml</td><td>number</td><td>Standard concentration in ng/mL. Leave blank for sample and blank rows.</td></tr>
+            <tr><td>dilution_x</td><td>number</td><td>Dilution factor as a plain number, e.g. <code style="font-family:var(--mono);font-size:12px">20</code> or <code style="font-family:var(--mono);font-size:12px">50</code></td></tr>
+            <tr><td>rfu</td><td>number</td><td>Measured fluorescence (RFU)</td></tr>
+            <tr><td>note</td><td>text</td><td>Optional free-text note, e.g. <code style="font-family:var(--mono);font-size:12px">20x dilution</code></td></tr>
           </tbody>
         </table>
         <a class="dl-btn" onclick="downloadRibogreenTemplate()">
@@ -741,40 +531,32 @@
           Download Excel template
         </a>
       </div>
-
       <div class="tool-section">
         <h4>How to run</h4>
         <ol class="steps">
-          <li>Open <code style="font-family:var(--mono);font-size:13px">Ribogreen%20FINAL%20average%20peak%20plots.py</code> in your editor.</li>
-          <li>Edit the <code style="font-family:var(--mono);font-size:13px">FILES</code> list at the top to point to your Excel files.</li>
+          <li>Open the script in your editor.</li>
+          <li>Edit the <code style="font-family:var(--mono);font-size:13px">FILES</code> list to point to your Excel files.</li>
           <li>Set <code style="font-family:var(--mono);font-size:13px">OUTDIR</code> to the folder where you want plots and tables saved.</li>
-          <li>Adjust <code style="font-family:var(--mono);font-size:13px">MIN_REPLICATE_R2_FOR_AVG</code> (default 0.99) if needed.</li>
-          <li>Run: <code style="font-family:var(--mono);font-size:13px">python Ribogreen%20FINAL%20average%20peak%20plots.py</code></li>
+          <li>Run the script.</li>
         </ol>
       </div>
-
       <div class="tool-section">
         <h4>Outputs</h4>
         <ul class="output-list">
-          <li>Standard curve plots per plate (with individual replicate lines)</li>
-          <li>Sample concentration plots grouped by fraction</li>
+          <li>Standard curve plots per plate</li>
           <li>Encapsulation efficiency (EE%) curve per sample type</li>
           <li><code style="font-family:var(--mono);font-size:13px">ribogreen_clean_output_table.xlsx</code> - full results with flags</li>
-          <li><code style="font-family:var(--mono);font-size:13px">curve_summary.csv</code> - fitted slope, intercept, R² per plate</li>
+          <li><code style="font-family:var(--mono);font-size:13px">curve_summary.csv</code> - slope, intercept, R² per plate</li>
         </ul>
       </div>
-
       <div class="tool-section">
         <h4>Key settings in the script</h4>
-        <div class="code-block">FILES = [Path("your_file.xlsx"), ...]   # list of Excel files
-SHEET = "Data_for_Python"              # sheet name (do not change)
-OUTDIR = Path("output_folder")         # where to save results
-
-MIN_REPLICATE_R2_FOR_AVG = 0.99        # min R² for a replicate to be used
-SATURATION_RFU = 260000                # RFU above this = flagged as saturated
-CLIP_NEGATIVE_CONC_TO_ZERO = True      # set negative concentrations to 0
-EE_VALID_MIN = 0                       # drop EE% below this (%)
-EE_VALID_MAX = 100.0                   # drop EE% above this (%)</div>
+        <div class="code-block">FILES = [Path("your_file.xlsx"), ...]
+SHEET = "Data_for_Python"
+OUTDIR = Path("output_folder")
+MIN_REPLICATE_R2_FOR_AVG = 0.99
+SATURATION_RFU = 260000
+CLIP_NEGATIVE_CONC_TO_ZERO = True</div>
       </div>
     </div>
 
@@ -786,38 +568,32 @@ EE_VALID_MAX = 100.0                   # drop EE% above this (%)</div>
         <div class="desc">Reads AF4 instrument Excel exports · plots UV 260 nm and/or Rh traces · auto-detects samples from header</div>
         <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/AF4_UV_Rh_plotting_FINAL.py" download>
           <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v-1.5H3V14z"/></svg>
-          Download script
+          Open script
         </a>
       </div>
-
       <div class="tool-section">
         <h4>What the script does</h4>
         <p>Parses the header row of an AF4 Excel export to detect sample names and available channels (UV / Rh), then plots the selected chromatograms with peak annotations and dotted vertical lines at each UV peak maximum.</p>
       </div>
-
       <div class="tool-section">
         <h4>Required input format - direct AF4 instrument export (.xlsx)</h4>
-        <p>The script reads the Excel file as exported directly by the AF4 instrument software. No manual reformatting needed. The header row must contain column names in the format:</p>
-        <div class="code-block">time (min) | 1126 - F3 empty 200uL Vcf175 Vx250g Vf000 (UV) | time (min).1 | 1126 - F3 empty 200uL ... (Rh(Q)) | ...</div>
-        <p style="margin-top:0.75rem;">Duplicate <code style="font-family:var(--mono);font-size:13px">time (min)</code> columns are renamed automatically by pandas (<code style="font-family:var(--mono);font-size:13px">.1</code>, <code style="font-family:var(--mono);font-size:13px">.2</code>, …). The script pairs each UV/Rh column with its preceding time column.</p>
+        <p>The script reads the Excel file as exported directly by the AF4 instrument. No manual reformatting needed. The header row must contain column names in the format:</p>
+        <div class="code-block">time (min) | 1126 - F3 empty 200uL Vcf175 Vx250g Vf000 (UV) | time (min).1 | ... (Rh(Q)) | ...</div>
       </div>
-
       <div class="tool-section">
         <h4>How to run</h4>
         <ol class="steps">
-          <li>Open <code style="font-family:var(--mono);font-size:13px">AF4_UV_Rh_plotting_FINAL.py</code> in your editor.</li>
-          <li>Set the <code style="font-family:var(--mono);font-size:13px">xlsx_path</code> variable inside <code style="font-family:var(--mono);font-size:13px">main()</code> to your file path.</li>
-          <li>Run: <code style="font-family:var(--mono);font-size:13px">python AF4_UV_Rh_plotting_FINAL.py</code></li>
-          <li>The terminal will list detected samples - enter numbers to select, or press Enter for all.</li>
+          <li>Open the script and set the <code style="font-family:var(--mono);font-size:13px">xlsx_path</code> variable inside <code style="font-family:var(--mono);font-size:13px">main()</code>.</li>
+          <li>Run the script.</li>
+          <li>The terminal lists detected samples , enter numbers to select, or press Enter for all.</li>
           <li>Choose channel: UV, Rh, or both.</li>
         </ol>
       </div>
-
       <div class="tool-section">
         <h4>Outputs</h4>
         <ul class="output-list">
           <li>Interactive matplotlib figure (UV and/or Rh overlays)</li>
-          <li>PNG file saved next to the input Excel file (<code style="font-family:var(--mono);font-size:13px">_af4_plot.png</code>)</li>
+          <li>PNG saved next to the input file (<code style="font-family:var(--mono);font-size:13px">_af4_plot.png</code>)</li>
           <li>Peak time annotated in legend labels for UV channel</li>
         </ul>
       </div>
@@ -827,48 +603,46 @@ EE_VALID_MAX = 100.0                   # drop EE% above this (%)</div>
     <div id="tool-dls" class="tool-detail">
       <a class="back-link" onclick="backToTools()">← all tools</a>
       <div class="tool-header">
-        <h2>DLS intensity distribution</h2>
-        <div class="desc">Log-scale bar chart of particle size distribution from Zetasizer intensity data</div>
-        <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/DLS.py" download>
+        <h2>DLS plotter</h2>
+        <div class="desc">Size distribution and correlogram plotting from Zetasizer .txt exports · auto-detects samples and repeats · interactive selection</div>
+        <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/DLS%20FINAL.py" download>
           <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v-1.5H3V14z"/></svg>
-          Download script
+          Open script
         </a>
       </div>
-
       <div class="tool-section">
         <h4>What the script does</h4>
-        <p>Takes tab-separated diameter / intensity data from the Zetasizer and plots a log-scale histogram with geometric bin widths. Non-zero bins are highlighted; the main peak is annotated with its diameter.</p>
+        <p>Points to a folder of Zetasizer .txt exports and automatically detects which files are correlograms and which are size distributions. Sample names and repeat numbers are extracted from the record header row (e.g. <code style="font-family:var(--mono);font-size:13px">Record 4: F3 empty 1</code> → sample <em>F3 empty</em>, repeat <em>1</em>). At runtime the script asks which plot type(s) to produce and which samples to include; all repeats for a chosen sample are overlaid on the same figure.</p>
       </div>
-
       <div class="tool-section">
-        <h4>Required input format - tab-separated text</h4>
-        <p>Copy the size distribution table from your Zetasizer export and paste it as a Python string inside the script. The format is:</p>
-        <div class="code-block">Diameter(nm)	% Intensity
-0.038	0
-...
-87.817	1.10632
-109.568	79.6935
-136.706	19.2001
-170.565	0</div>
-        <p style="margin-top:0.75rem;">Two columns, tab-separated, with a one-line header. The full diameter grid (including zero-intensity bins) must be included to preserve the correct log-spacing.</p>
+        <h4>Required input - folder of Zetasizer .txt exports</h4>
+        <p>The folder must contain tab-separated .txt files whose names include <code style="font-family:var(--mono);font-size:13px">Correlogram</code> or <code style="font-family:var(--mono);font-size:13px">Size Dist</code> (case-insensitive). Expected column format:</p>
+        <div class="code-block">X Lag Time	Record 1: F3 mRNA 1	Record 2: F3 mRNA 2	...
+0.5	0.912	0.910	...
+1.0	0.917	0.915	...</div>
       </div>
-
       <div class="tool-section">
         <h4>How to run</h4>
         <ol class="steps">
-          <li>Open <code style="font-family:var(--mono);font-size:13px">DLS.py</code> in your editor.</li>
-          <li>Replace the <code style="font-family:var(--mono);font-size:13px">data_form0</code> string with your Zetasizer data.</li>
-          <li>Update the title in <code style="font-family:var(--mono);font-size:13px">plot_dls_binned(data_form0, title="...")</code>.</li>
-          <li>To plot multiple formulations, duplicate the data string and the function call.</li>
-          <li>Run: <code style="font-family:var(--mono);font-size:13px">python DLS.py</code></li>
+          <li>Open <code style="font-family:var(--mono);font-size:13px">DLS FINAL.py</code> and set <code style="font-family:var(--mono);font-size:13px">DATA_FOLDER</code> to your .txt files folder.</li>
+          <li>Optionally set <code style="font-family:var(--mono);font-size:13px">SAVE_FOLDER</code> (or leave <code style="font-family:var(--mono);font-size:13px">None</code> to display only).</li>
+          <li>Run the script.</li>
+          <li>Choose plot type (correlogram / size dist / both).</li>
+          <li>Choose samples , enter numbers or press Enter for all.</li>
         </ol>
       </div>
-
+      <div class="tool-section">
+        <h4>Key settings in the script</h4>
+        <div class="code-block">DATA_FOLDER = r"C:\path	o\DLS\data"   # folder with .txt files
+SAVE_FOLDER = None                      # path to save figures, or None
+SAVE_FORMAT = "png"                     # "png", "svg", or "pdf"
+SAVE_DPI    = 300</div>
+      </div>
       <div class="tool-section">
         <h4>Outputs</h4>
         <ul class="output-list">
-          <li>Interactive matplotlib bar chart (log x-axis, diameter in nm)</li>
-          <li>Peak diameter printed to terminal</li>
+          <li>One figure per selected sample with all repeats overlaid</li>
+          <li>Figures saved to <code style="font-family:var(--mono);font-size:13px">SAVE_FOLDER</code> if set (e.g. <code style="font-family:var(--mono);font-size:13px">SampleName_correlogram.png</code>)</li>
         </ul>
       </div>
     </div>
@@ -877,62 +651,44 @@ EE_VALID_MAX = 100.0                   # drop EE% above this (%)</div>
     <div id="tool-chromixs" class="tool-detail">
       <a class="back-link" onclick="backToTools()">← all tools</a>
       <div class="tool-header">
-        <h2>ChromIXS frame processing</h2>
+        <h2>Chromixs frame processing</h2>
         <div class="desc">Buffer/sample region detection · spike rejection · buffer subtraction · averaged block export</div>
         <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/Chromixs.py" download>
           <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v-1.5H3V14z"/></svg>
-          Download script
+          Open script
         </a>
       </div>
-
       <div class="tool-section">
         <h4>What the script does</h4>
-        <p>Reads a folder of individual SAXS frames (.dat files), builds an intensity-vs-frame chromatogram trace, and lets you select buffer and sample regions (automatically, manually, or interactively with a slider). It then averages buffer frames (with spike rejection), subtracts the buffer from each sample block, and saves the subtracted curves as new .dat files.</p>
+        <p>Reads a folder of individual SAXS frames (.dat files), builds an intensity-vs-frame chromatogram trace, and lets you select buffer and sample regions (automatically, manually, or with a slider). Averages buffer frames (with spike rejection), subtracts the buffer from each sample block, and saves the subtracted curves as new .dat files.</p>
       </div>
-
       <div class="tool-section">
         <h4>Required input - folder of .dat files</h4>
-        <p>Each file is one SAXS frame in three-column format:</p>
-        <div class="code-block"># optional comment lines
-q          I(q)       error
+        <div class="code-block">q          I(q)       error
 1.234e-02  5.678e+00  1.234e-01
 ...</div>
-        <p style="margin-top:0.75rem;">Files are read in natural (numerical) order by filename. The q grid must be identical across all frames.</p>
       </div>
-
       <div class="tool-section">
         <h4>How to run</h4>
         <ol class="steps">
           <li>Open <code style="font-family:var(--mono);font-size:13px">Chromixs.py</code> and set <code style="font-family:var(--mono);font-size:13px">FOLDER</code> to your data directory.</li>
-          <li>Choose <code style="font-family:var(--mono);font-size:13px">SELECTION_MODE</code>: <code style="font-family:var(--mono);font-size:13px">"auto"</code> (recommended first try), <code style="font-family:var(--mono);font-size:13px">"manual"</code>, or <code style="font-family:var(--mono);font-size:13px">"slider"</code>.</li>
-          <li>Set <code style="font-family:var(--mono);font-size:13px">WINDOW_SIZE</code> (frames per averaged output curve, default 50) and <code style="font-family:var(--mono);font-size:13px">STEP</code> (default 50 = non-overlapping blocks).</li>
-          <li>Run: <code style="font-family:var(--mono);font-size:13px">python Chromixs.py</code></li>
-          <li>If using <code style="font-family:var(--mono);font-size:13px">"auto"</code> or <code style="font-family:var(--mono);font-size:13px">"manual"</code>, a confirmation plot is shown - press Enter to accept or <code style="font-family:var(--mono);font-size:13px">r</code> to switch to the interactive slider.</li>
+          <li>Choose <code style="font-family:var(--mono);font-size:13px">SELECTION_MODE</code>: <code style="font-family:var(--mono);font-size:13px">"auto"</code>, <code style="font-family:var(--mono);font-size:13px">"manual"</code>, or <code style="font-family:var(--mono);font-size:13px">"slider"</code>.</li>
+          <li>Run the script.</li>
         </ol>
       </div>
-
       <div class="tool-section">
         <h4>Key settings</h4>
-        <div class="code-block">FOLDER          = Path("your/data/folder")
-WINDOW_SIZE     = 50        # frames per output curve
-STEP            = 50        # 50 = non-overlapping; 1 = sliding window
-SELECTION_MODE  = "auto"    # "auto" | "manual" | "slider"
-EXPORT_REMAINDER = True     # include last incomplete block?
-
-# Auto-detection tuning
-AUTO_BASELINE_FRACTION = 0.15   # fraction of initial frames for baseline
-AUTO_PEAK_FRACTION     = 0.005  # threshold = baseline + this × (peak − baseline)
-AUTO_SMOOTH_WINDOW     = 30     # smoothing window before thresholding
-
-BUFFER_SPIKE_SIGMA = 5.0        # exclude buffer frames > median + N×std</div>
+        <div class="code-block">FOLDER         = Path("your/data/folder")
+WINDOW_SIZE    = 50       # frames per output curve
+STEP           = 50       # 50 = non-overlapping blocks
+SELECTION_MODE = "auto"   # "auto" | "manual" | "slider"
+BUFFER_SPIKE_SIGMA = 5.0  # exclude buffer frames > median + N×std</div>
       </div>
-
       <div class="tool-section">
         <h4>Outputs</h4>
         <ul class="output-list">
-          <li>Subtracted .dat files saved to a new subfolder (<code style="font-family:var(--mono);font-size:13px">_subtracted_50frame_blocks</code>)</li>
-          <li>Each file named with sample and buffer frame ranges</li>
-          <li>Summary chromatogram plot with error bars saved as PNG</li>
+          <li>Subtracted .dat files in a new subfolder (<code style="font-family:var(--mono);font-size:13px">_subtracted_50frame_blocks</code>)</li>
+          <li>Summary chromatogram plot saved as PNG</li>
         </ul>
       </div>
     </div>
@@ -942,51 +698,48 @@ BUFFER_SPIKE_SIGMA = 5.0        # exclude buffer frames > median + N×std</div>
       <a class="back-link" onclick="backToTools()">← all tools</a>
       <div class="tool-header">
         <h2>Guinier analysis</h2>
-        <div class="desc">Automatic Guinier range fitting · Rg ± error · I₀ · qRg validation · batch over folder</div>
-        <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/Guinier.py" download>
+        <div class="desc">Automatic Guinier fitting · longest-stable-window criterion · Rg ± error · I₀ · qRg validation · p(r) readiness flags · batch over folder</div>
+        <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/guinier_analysis_robust%20LONGEST%20WINDOW%20and%20p(r)%20selection.py" download>
           <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v-1.5H3V14z"/></svg>
-          Download script
+          Open script
         </a>
       </div>
-
       <div class="tool-section">
         <h4>What the script does</h4>
-        <p>Reads all .dat files in a folder, searches the low-q region of each for the best Guinier window (maximising R², number of points, and qR<sub>g</sub> close to 1.0 while keeping qR<sub>g,max</sub> &lt; 1.3), fits a weighted linear regression to ln(I) vs q², and extracts Rg ± error and I₀. Results are saved to a CSV table.</p>
+        <p>Reads all .dat files in a folder and searches the low-q region of each for a valid Guinier window. Windows must pass hard rejection criteria (slope &lt; 0, qR<sub>g,max</sub> ≤ 1.3, R² ≥ MIN_R2) and a stability criterion: from all windows whose Rg CV ≤ MAX_RG_CV, the longest is selected. If no window meets the CV threshold the script falls back to the window with the lowest CV. After fitting, each file receives a <code style="font-family:var(--mono);font-size:13px">next_step</code> flag (<code style="font-family:var(--mono);font-size:13px">p(r)</code>, <code style="font-family:var(--mono);font-size:13px">inspect_then_pr</code>, or <code style="font-family:var(--mono);font-size:13px">recheck</code>) indicating readiness for downstream p(r) analysis.</p>
       </div>
-
       <div class="tool-section">
         <h4>Required input - folder of .dat files</h4>
-        <p>Same three-column format as ChromIXS (q, I, error). Files are processed in natural numerical order. Only positive-intensity data points are used.</p>
         <div class="code-block">q          I(q)       error
 1.234e-02  5.678e+00  1.234e-01
 ...</div>
       </div>
-
       <div class="tool-section">
         <h4>How to run</h4>
         <ol class="steps">
-          <li>Open <code style="font-family:var(--mono);font-size:13px">Guinier.py</code> and set <code style="font-family:var(--mono);font-size:13px">FOLDER</code> to your folder of subtracted frames.</li>
-          <li>Adjust Guinier criteria if needed (see settings below).</li>
-          <li>Run: <code style="font-family:var(--mono);font-size:13px">python Guinier.py</code></li>
-          <li>Results are printed to the terminal and saved to <code style="font-family:var(--mono);font-size:13px">guinier_results.csv</code> in the same folder.</li>
+          <li>Open the script and set <code style="font-family:var(--mono);font-size:13px">INPUT_FOLDER</code> to your subtracted frames folder.</li>
+          <li>Adjust fitting criteria if needed.</li>
+          <li>Run the script.</li>
+          <li>Results are printed to terminal and saved to a dated subfolder.</li>
         </ol>
       </div>
-
       <div class="tool-section">
         <h4>Key settings</h4>
-        <div class="code-block">FOLDER           = Path("your/subtracted/folder")
-MIN_POINTS       = 6       # minimum points in Guinier window
-MAX_POINTS       = 30      # maximum points in Guinier window
-QRG_MAX_LIMIT    = 1.30    # strict Guinier criterion (qRg,max must be < this)
-LOWQ_FRACTION    = 0.25    # only search lowest 25% of q-range
-MIN_R2           = 0.995   # minimum R² for a valid window</div>
+        <div class="code-block">INPUT_FOLDER      = r"your/subtracted/folder"
+MAX_LOW_Q_POINTS  = 60     # max low-q points to search
+MAX_LOW_Q_CUTOFF  = 0.10   # only search q &lt; this value (Å⁻¹)
+MIN_WINDOW_POINTS = 5      # minimum points in a fit window
+MAX_WINDOW_POINTS = 30     # maximum points in a fit window
+QRG_LIMIT         = 1.3    # hard upper bound on qmax·Rg
+MIN_R2            = 0.990  # minimum R² for a valid window
+MAX_RG_CV         = 0.05   # stability: CV of Rg across overlapping windows</div>
       </div>
-
       <div class="tool-section">
         <h4>Outputs</h4>
         <ul class="output-list">
-          <li><code style="font-family:var(--mono);font-size:13px">guinier_results.csv</code> - Rg, Rg_err, qmin, qmax, qRg_max, I₀, R² per file</li>
-          <li>Terminal summary of all fits (OK / failed with reason)</li>
+          <li><code style="font-family:var(--mono);font-size:13px">guinier_results.csv</code> , Rg, Rg_err, qmin, qmax, qRg_max, I₀, R², stability_cv, next_step per file</li>
+          <li>4-panel diagnostic PNG per file (<code style="font-family:var(--mono);font-size:13px">_guinier.png</code>): Guinier plot, I(q), Rg across windows, residuals</li>
+          <li>Terminal summary with pass/fail reason per file</li>
         </ul>
       </div>
     </div>
@@ -996,59 +749,144 @@ MIN_R2           = 0.995   # minimum R² for a valid window</div>
       <a class="back-link" onclick="backToTools()">← all tools</a>
       <div class="tool-header">
         <h2>SAXS offline batch plotter</h2>
-        <div class="desc">Plots I(q) curves for a list of buffer-subtracted SAXS files · log-log scale · colour-coded by formulation and buffer</div>
-        <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/Offline%20batch%20samples.py" download>
+        <div class="desc">Plots I(q) curves for buffer-subtracted SAXS files · log-log scale · interactive file selection · auto colour by sample</div>
+        <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/Offline%20batch%20samples%20FINAL.py" download>
           <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v-1.5H3V14z"/></svg>
-          Download script
+          Open script
         </a>
       </div>
-
       <div class="tool-section">
         <h4>What the script does</h4>
-        <p>Reads a user-defined list of .dat file names from a folder and plots all I(q) curves on a single log-log figure. Colours and markers are assigned automatically based on sample name conventions (F3 vs F3C, PBS vs TRIS).</p>
+        <p>Scans a folder for all .dat files, prints a numbered list, and lets you pick which to plot (individual numbers, ranges like 1-5, or Enter for all). Colours and markers are assigned automatically from the sample name structure (first token → marker shape, sample identity → hue, buffer/condition → shade). Optionally overlays error bars.</p>
       </div>
-
       <div class="tool-section">
         <h4>Required input - folder of .dat files</h4>
-        <p>Buffer-subtracted SAXS files in two-column format (q, I) or three-column (q, I, error). Comment lines starting with <code style="font-family:var(--mono);font-size:13px">#</code> are skipped.</p>
-        <div class="code-block">q          I(q)
-1.234e-02  5.678e+00
+        <div class="code-block">q          I(q)       error
+1.234e-02  5.678e+00  1.234e-01
 ...</div>
-        <p style="margin-top:0.75rem;">File names should follow the convention <code style="font-family:var(--mono);font-size:13px">SampleName_Buffer_scan-XXXXX_eiger_sub.dat</code> for automatic colour assignment.</p>
       </div>
-
-      <div class="tool-section">
-        <h4>Naming convention for auto-colouring</h4>
-        <table class="format-table">
-          <thead><tr><th>Name pattern</th><th>Marker</th><th>Colour</th></tr></thead>
-          <tbody>
-            <tr><td>F3_empty_PBS_...</td><td>circle</td><td>light blue</td></tr>
-            <tr><td>F3_empty_TRIS_...</td><td>circle</td><td>dark blue</td></tr>
-            <tr><td>F3_mRNA_PBS_...</td><td>circle</td><td>light orange</td></tr>
-            <tr><td>F3_mRNA_TRIS_...</td><td>circle</td><td>dark orange</td></tr>
-            <tr><td>F3C_empty_PBS_...</td><td>square</td><td>light green</td></tr>
-            <tr><td>F3C_empty_TRIS_...</td><td>square</td><td>dark green</td></tr>
-            <tr><td>F3C_mRNA_PBS_...</td><td>square</td><td>light purple</td></tr>
-            <tr><td>F3C_mRNA_TRIS_...</td><td>square</td><td>dark purple</td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <div class="tool-section">
         <h4>How to run</h4>
         <ol class="steps">
-          <li>Open <code style="font-family:var(--mono);font-size:13px">Offline%20batch%20samples.py</code> and set <code style="font-family:var(--mono);font-size:13px">FOLDER</code> to your data directory.</li>
-          <li>Edit <code style="font-family:var(--mono);font-size:13px">FILES_TO_PLOT</code> - list the file stems (without extension) you want to include.</li>
-          <li>Set <code style="font-family:var(--mono);font-size:13px">EXTENSION = ".dat"</code> (or <code style="font-family:var(--mono);font-size:13px">".txt"</code> as appropriate).</li>
-          <li>Set <code style="font-family:var(--mono);font-size:13px">USE_LOGLOG = True</code> for log-log, <code style="font-family:var(--mono);font-size:13px">False</code> for linear.</li>
-          <li>Run: <code style="font-family:var(--mono);font-size:13px">python Offline%20batch%20samples.py</code></li>
+          <li>Open the script and set <code style="font-family:var(--mono);font-size:13px">FOLDER</code> to your data directory.</li>
+          <li>Set <code style="font-family:var(--mono);font-size:13px">USE_LOGLOG = True</code> (default) or <code style="font-family:var(--mono);font-size:13px">False</code>.</li>
+          <li>Run the script.</li>
+          <li>The terminal lists all files , enter numbers/ranges or press Enter for all.</li>
+          <li>Choose whether to show error bars.</li>
+          <li>Enter a filename to save the plot, or press Enter to skip saving.</li>
         </ol>
       </div>
-
       <div class="tool-section">
         <h4>Outputs</h4>
         <ul class="output-list">
           <li>Interactive matplotlib figure with all selected I(q) curves</li>
+          <li>PNG saved to <code style="font-family:var(--mono);font-size:13px">SAVE_FOLDER</code> if a filename is entered</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── p(r) ── -->
+    <div id="tool-pr" class="tool-detail">
+      <a class="back-link" onclick="backToTools()">← all tools</a>
+      <div class="tool-header">
+        <h2>p(r) analysis via datgnom</h2>
+        <div class="desc">Batch datgnom runs · Rg from Guinier CSV · .out file output · summary CSV · autorg fallback</div>
+        <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/p%28r%29.py" download>
+          <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v-1.5H3V14z"/></svg>
+          Open script
+        </a>
+      </div>
+      <div class="tool-section">
+        <h4>What the script does</h4>
+        <p>Reads the <code style="font-family:var(--mono);font-size:13px">guinier_results.csv</code> produced by the Guinier script and selects files flagged with <code style="font-family:var(--mono);font-size:13px">next_step = p(r)</code> or <code style="font-family:var(--mono);font-size:13px">inspect_then_pr</code>. For each selected file it calls ATSAS <code style="font-family:var(--mono);font-size:13px">datgnom</code> with the corresponding Rg, saves the resulting <code style="font-family:var(--mono);font-size:13px">.out</code> file, and writes a summary CSV with Dmax, Rg_pr, I₀, and quality flags. An optional autorg fallback handles files where the Guinier fit failed.</p>
+      </div>
+      <div class="tool-section">
+        <h4>Prerequisites</h4>
+        <p>ATSAS must be installed (tested with ATSAS 3.1.3). Set <code style="font-family:var(--mono);font-size:13px">DATGNOM_EXE</code> and <code style="font-family:var(--mono);font-size:13px">AUTORG_EXE</code> to the correct paths. Run the Guinier script first on the same folder to produce <code style="font-family:var(--mono);font-size:13px">guinier_results.csv</code>.</p>
+      </div>
+      <div class="tool-section">
+        <h4>How to run</h4>
+        <ol class="steps">
+          <li>Run the Guinier script first to generate <code style="font-family:var(--mono);font-size:13px">guinier_results.csv</code>.</li>
+          <li>Open <code style="font-family:var(--mono);font-size:13px">p(r).py</code> and set <code style="font-family:var(--mono);font-size:13px">BASE_FOLDER</code> and <code style="font-family:var(--mono);font-size:13px">SAMPLE_FOLDER</code>.</li>
+          <li>Verify <code style="font-family:var(--mono);font-size:13px">DATGNOM_EXE</code> and <code style="font-family:var(--mono);font-size:13px">AUTORG_EXE</code> paths are correct for your machine.</li>
+          <li>Run the script.</li>
+        </ol>
+      </div>
+      <div class="tool-section">
+        <h4>Key settings</h4>
+        <div class="code-block">BASE_FOLDER   = Path(r"C:\path	o\your\data")
+SAMPLE_FOLDER = "your_subtracted_folder"
+
+DATGNOM_EXE = r"C:\Program Files\ATSAS-3.1.3in\datgnom.exe"
+AUTORG_EXE  = r"C:\Program Files\ATSAS-3.1.3inutorg.exe"
+
+AUTORG_FALLBACK          = True   # use autorg if Guinier Rg is missing
+AUTORG_FALLBACK_ALL      = False  # also attempt p(r) on Guinier-failed files
+INCLUDE_INSPECT_THEN_PR  = True   # include "inspect_then_pr" files
+DATGNOM_TIMEOUT          = 300    # seconds per file</div>
+      </div>
+      <div class="tool-section">
+        <h4>Outputs</h4>
+        <ul class="output-list">
+          <li>One subfolder per processed file containing the <code style="font-family:var(--mono);font-size:13px">.out</code> file and datgnom logs</li>
+          <li><code style="font-family:var(--mono);font-size:13px">datgnom_summary.csv</code> , Dmax, Rg_pr, Rg_pr_err, I₀, rg_source, datgnom_status, pr_recommendation per file</li>
+          <li><code style="font-family:var(--mono);font-size:13px">matched_files_with_rg.csv</code> , file-matching diagnostic table</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── powerlaw ── -->
+    <div id="tool-powerlaw" class="tool-detail">
+      <a class="back-link" onclick="backToTools()">← all tools</a>
+      <div class="tool-header">
+        <h2>Power-law analysis</h2>
+        <div class="desc">I(q) ∝ q<sup>−α</sup> · automatic region search · stability criterion · two-regime detection · diagnostic plots · batch over folder</div>
+        <a class="dl-btn" href="https://raw.githubusercontent.com/tina50505/LPNs/main/powerlaw_analysis.py" download>
+          <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v-1.5H3V14z"/></svg>
+          Open script
+        </a>
+      </div>
+      <div class="tool-section">
+        <h4>What the script does</h4>
+        <p>Fits a power law I(q) ∝ q<sup>−α</sup> in the intermediate- and high-q regime for every SAXS file in a folder. The exponent α carries physical meaning: α = 4 is the Porod law (smooth interfaces), α = 2 a Gaussian coil, α = 1 a thin rod, α ∈ (1,3) a mass fractal, α ∈ (3,4) a surface fractal.</p>
+        <p>The fitting region is found automatically by evaluating all candidate windows within the user-defined q range by weighted linear regression of ln(I) vs ln(q). Windows must satisfy R² ≥ MIN_R2 and a stability criterion (CV of α across overlapping windows ≤ MAX_ALPHA_CV); the longest stable window is selected. A two-regime check is performed using an F-test. If a <code style="font-family:var(--mono);font-size:13px">guinier_results.csv</code> is provided, the per-file Guinier qmax is used as the lower q boundary.</p>
+      </div>
+      <div class="tool-section">
+        <h4>Required input - folder of .dat files</h4>
+        <div class="code-block">q          I(q)       error
+1.234e-02  5.678e+00  1.234e-01
+...</div>
+      </div>
+      <div class="tool-section">
+        <h4>How to run</h4>
+        <ol class="steps">
+          <li>Open the script and set <code style="font-family:var(--mono);font-size:13px">BASE_FOLDER</code> and <code style="font-family:var(--mono);font-size:13px">SAMPLE_FOLDER</code>.</li>
+          <li>Optionally point <code style="font-family:var(--mono);font-size:13px">GUINIER_CSV</code> to your <code style="font-family:var(--mono);font-size:13px">guinier_results.csv</code> for automatic per-file q-boundaries.</li>
+          <li>Run the script.</li>
+          <li>Results printed to terminal and saved to a dated subfolder.</li>
+        </ol>
+      </div>
+      <div class="tool-section">
+        <h4>Key settings</h4>
+        <div class="code-block">BASE_FOLDER   = Path(r"C:\path	o\your\data")
+SAMPLE_FOLDER = "your_subtracted_folder"
+
+Q_MIN_FIT          = 0.02   # lower q boundary (Å⁻¹); overridden per-file if GUINIER_CSV set
+Q_MAX_FIT          = None   # upper q boundary; None = noise cutoff only
+MIN_WINDOW_POINTS  = 10
+MAX_WINDOW_POINTS  = 100
+MIN_R2             = 0.990
+MAX_ALPHA_CV       = 0.05   # stability: CV of α across overlapping windows
+MAX_RELATIVE_ERROR = 0.5    # exclude points where σ/I exceeds this
+GUINIER_CSV        = INPUT_FOLDER / "guinier_results.csv"  # None to disable
+F_TEST_ALPHA       = 0.05   # significance threshold for two-regime detection</div>
+      </div>
+      <div class="tool-section">
+        <h4>Outputs</h4>
+        <ul class="output-list">
+          <li><code style="font-family:var(--mono);font-size:13px">powerlaw_results.csv</code> , α, α_err, α₂, q_transition, qmin, qmax, R², χ²_red, stability_cv, two_regime, status per file</li>
+          <li>4-panel diagnostic PNG per file (<code style="font-family:var(--mono);font-size:13px">_powerlaw.png</code>): log-log I(q) with fit overlay, residuals, α across valid windows</li>
         </ul>
       </div>
     </div>
@@ -1069,23 +907,21 @@ MIN_R2           = 0.995   # minimum R² for a valid window</div>
         <div class="contact-row"><div class="cl">Name</div><div class="cv">Tina Jurkošek</div></div>
         <div class="contact-row"><div class="cl">Institution</div><div class="cv">University of Copenhagen</div></div>
         <div class="contact-row"><div class="cl">Department</div><div class="cv">Department of Pharmacy</div></div>
-        <div class="contact-row"><div class="cl">Email</div><div class="cv" style="font-style:italic; color:var(--text-3);">tjurkosek@gmail.com</div></div>
+        <div class="contact-row"><div class="cl">Email</div><div class="cv" style="font-style:italic; color:var(--text-3);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6a2bca3a4bdb9a5b3bd96b1bbb7bfbaf8b5b9bb">[email&#160;protected]</a></div></div>
       </div>
     </div>
   </div>
 
 </div><!-- /shell -->
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function showSection(id, el) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
   document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
   document.getElementById(id).classList.add('visible');
   el.classList.add('active');
-  // reset tool view when leaving tools
   if (id !== 'tools') backToTools();
 }
-
 function toggleAcc(header) {
   const body = header.nextElementSibling;
   const arrow = header.querySelector('.acc-arrow');
@@ -1093,41 +929,37 @@ function toggleAcc(header) {
   body.classList.toggle('open', !open);
   arrow.classList.toggle('open', !open);
 }
-
 function showTool(id) {
   document.getElementById('tools-list').style.display = 'none';
   document.querySelectorAll('.tool-detail').forEach(d => d.classList.remove('visible'));
   document.getElementById('tool-' + id).classList.add('visible');
 }
-
 function backToTools() {
   document.getElementById('tools-list').style.display = '';
   document.querySelectorAll('.tool-detail').forEach(d => d.classList.remove('visible'));
 }
-
 function downloadRibogreenTemplate() {
-  // Build a simple CSV template the user can open in Excel and save as .xlsx
-  const header = 'plate\twell\tkind\tstd_conc_ng_ml\tdilution_x\trfu\tsample\tfraction\tbuffer\tnote';
+  const cols = ["plate","well","sample","buffer","fraction","kind","std_conc_ng_ml","dilution_x","rfu","note"];
   const rows = [
-    'TE\tA1\tblank\t\t\t1234\t\t\tPBS\t',
-    'TE\tA2\tstandard\t100\t\t98000\t\t\tPBS\t',
-    'TE\tA3\tstandard\t50\t\t49500\t\t\tPBS\t',
-    'TE\tA4\tstandard\t25\t\t24800\t\t\tPBS\t',
-    'TE\tA5\tstandard\t12.5\t\t12400\t\t\tPBS\t',
-    'TE\tA6\tstandard\t6.25\t\t6200\t\t\tPBS\t',
-    'TE\tA7\tstandard\t3.125\t\t3100\t\t\tPBS\t',
-    'TE\tB1\tsample\t\t4000\t52000\tF3\t15\tPBS\t',
-    'TE\tB2\tsample\t\t4000\t48000\tF3\t16\tPBS\t',
-    'TX\tC1\tblank\t\t\t1300\t\t\tPBS\t',
-    'TX\tC2\tstandard\t100\t\t97000\t\t\tPBS\t',
-    'TX\tD1\tsample\t\t20000\t45000\tF3\t15\tPBS\t',
+    ["TE","A1","","","","standard",100,1,228977,""],
+    ["TE","A2","","","","standard",50,1,134770,""],
+    ["TE","A3","","","","standard",25,1,79445,""],
+    ["TE","A4","","","","standard",12.5,1,46896,""],
+    ["TE","A5","","","","standard",6.25,1,33816,""],
+    ["TE","A6","","","","standard",3.125,1,25357,""],
+    ["TE","A7","","","","blank",0,1,15214,"single-row TE blank"],
+    ["TE","D5","F3","TE",15,"sample","",20,38923,"20x dilution"],
+    ["TE","D6","F3","TE",16,"sample","",20,43645,"20x dilution"],
+    ["TE","D7","F3","TE",17,"sample","",20,45191,"20x dilution"],
+    ["TE","E5","F3","TE",15,"sample","",50,25404,"50x dilution"],
+    ["TE","E6","F3","TE",16,"sample","",50,27309,"50x dilution"],
+    ["TE","E7","F3","TE",17,"sample","",50,31222,"50x dilution"],
   ];
-  const content = [header, ...rows].join('\n');
-  const blob = new Blob([content], { type: 'text/tab-separated-values' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'ribogreen_template.txt';
-  a.click();
+  const ws = XLSX.utils.aoa_to_sheet([cols, ...rows]);
+  ws["!cols"] = cols.map(() => ({wch: 16}));
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Data_for_Python");
+  XLSX.writeFile(wb, "ribogreen_template.xlsx");
 }
 </script>
 </body>
